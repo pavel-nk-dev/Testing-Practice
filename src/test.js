@@ -47,4 +47,29 @@ test("caesar cipher", () => {
   expect(caesarCipher(null, null)).toBe("");
 });
 
-test("analyze array", () => {});
+test("analyze array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+  expect(analyzeArray([])).toEqual({
+    average: 0,
+    min: 0,
+    max: 0,
+    length: 0,
+  });
+  expect(analyzeArray([0, 1, null])).toEqual({
+    average: 0,
+    min: 0,
+    max: 0,
+    length: 0,
+  });
+  expect(analyzeArray([23, -2, 5, 7, 9, 11, 74])).toEqual({
+    average: 18,
+    min: -2,
+    max: 74,
+    length: 7,
+  });
+});

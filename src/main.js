@@ -88,6 +88,27 @@ const caesarCipher = (str, shift) => {
   return result;
 };
 
-function analyzeArray(array) {}
+const analyzeArray = (array) => {
+  const resultObj = {
+    average: 0,
+    min: 0,
+    max: 0,
+    length: 0,
+  };
+
+  if (!array.length && Array.isArray(array)) return resultObj;
+
+  if (!array.every((num) => typeof num === "number")) return resultObj;
+
+  resultObj.average = Math.floor(array.reduce((a, b) => a + b) / array.length);
+
+  resultObj.min = Math.min(...array);
+
+  resultObj.max = Math.max(...array);
+
+  resultObj.length = array.length;
+
+  return resultObj;
+};
 
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
