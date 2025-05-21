@@ -39,6 +39,12 @@ test("calculator", () => {
   expect(calculator.multiply(1, 1)).toBe(1);
 });
 
-test("caesar cipher", () => {});
+test("caesar cipher", () => {
+  expect(caesarCipher("xyz", 3)).toBe("abc");
+  expect(caesarCipher("xyz", -3)).toBe("abc");
+  expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+  expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+  expect(caesarCipher(null, null)).toBe("");
+});
 
 test("analyze array", () => {});

@@ -30,6 +30,8 @@ const calculator = {
   },
 };
 const caesarCipher = (str, shift) => {
+  if (typeof str !== "string" || typeof shift !== "number") return "";
+  if (shift < 0) shift = Math.abs(shift);
   const ENG_ALPHABET = [
     "a",
     "b",
